@@ -1,21 +1,17 @@
 #include <stdio.h>
 
-int count = 0;
-void total_number(int number){
+
+int total_number(int number){
      
-    if (number > 0){
-          number % 10;
-          number / 10;
-          count++;
-          printf("%d", count);
-    }
+        if (number == 0) return 0;
+        int count = number % 10;
+        return count + total_number(number / 10);
 }
 int main(){
 
-    int number;
+    int number = total_number(4587);
+     
+    printf("%d", number);
 
-    puts("soni kiritng ");
-    scanf("%d", &number);
-
-    total_number(number);
+    return 0;
 }
